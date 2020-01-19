@@ -15,7 +15,7 @@ namespace RvEzy.Api.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IListingService _listingService;
-        public ListingsController(ListingsService listingService, IMapper mapper)
+        public ListingsController(IListingsService listingService, IMapper mapper)
         {
             _listingService = listingService;
             _mapper = mapper;
