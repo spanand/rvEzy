@@ -22,17 +22,10 @@ namespace RvEzy.Api.Services
                         x => x.MigrationsHistoryTable("__MigrationHistory", DefaultSchema))
                     .ReplaceService<IMigrationsAnnotationProvider, RvEzyAnnotationProvider>()
                     .ReplaceService<IMigrationsSqlGenerator, RvEzyMigrationSqlGenerator>());
-            services.AddAutoMapper(typeof(Startup));
+            services.AddAutoMapper(typeof(Startup));            
             services.AddTransient<IListingService, ListingsService>();
             services.AddOptions();
         }
-
-        private static void AddRvEzyAutoMapper(this IServiceCollection services)
-        {
-            services.AddAutoMapper();
-            Mapper.AssertConfigurationIsValid();
-        }
-
 
     }
 
